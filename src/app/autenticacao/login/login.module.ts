@@ -10,6 +10,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -33,6 +34,7 @@ import { LoginComponent, LogarComponent } from './components';
     MatSnackBarModule,
     MatListModule,
     MatInputModule,
+    MatToolbarModule,
     FlexLayoutModule
   ]
 })
