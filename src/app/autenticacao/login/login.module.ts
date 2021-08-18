@@ -15,13 +15,16 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { LoginComponent, LogarComponent } from './components';
-
+import { LoginService } from './services';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
     LogarComponent
+  ],
+  providers: [
+    LoginService
   ],
   imports: [
     CommonModule,
