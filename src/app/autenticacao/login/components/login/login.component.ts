@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  logar(){
+  /*logar(){
     if (this.form.invalid){
       this.snackBar.open(
         "Dados Inválidos","Erro", { duration: 5000 }
@@ -42,11 +42,10 @@ export class LoginComponent implements OnInit {
     }
     const login: Login = this.form.value;
     alert(JSON.stringify(login));
-  }
+  }*/
 
-}
 
-/*logar() {
+  logar() {
     if (this.form.invalid) {
       return;
     }
@@ -61,8 +60,8 @@ export class LoginComponent implements OnInit {
             atob(data['data']['token'].split('.')[1]));
           console.log(JSON.stringify(usuarioData));
           if (usuarioData['role'] == 'ROLE_ADMIN') {
-          	alert('Deve redirecionar para a página de admin');
-            //this.router.navigate(['/admin']);
+          	/*alert('Deve redirecionar para a página de admin');*/
+            this.router.navigate(['/inicial']);
           } else {
           	alert('Deve redirecionar para a página de funcionário');
             //this.router.navigate(['/funcionario']);
@@ -77,4 +76,8 @@ export class LoginComponent implements OnInit {
           this.snackBar.open(msg, "Erro", { duration: 5000 });
         }
       );
-  }*/
+  }
+
+
+}
+

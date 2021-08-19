@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginModule, LoginRoutingModule } from './autenticacao';
+import { InicialModule, InicialRoutingModule } from './pdv';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,8 @@ import { LoginModule, LoginRoutingModule } from './autenticacao';
     LoginModule,
     LoginRoutingModule,
     HttpClientModule,
+    InicialModule,
+    InicialRoutingModule,
 
     AppRoutingModule
   ],
