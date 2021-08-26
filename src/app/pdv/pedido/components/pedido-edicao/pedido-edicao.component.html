@@ -1,0 +1,16 @@
+  <form fxLayoutAlign="center">
+    <input type="text"
+           placeholder="Selecione um Cliente"
+           [formControl]="control"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let cliente of filteredClinetes | async" [value]="cliente">
+        {{cliente}}
+      </mat-option>
+    </mat-autocomplete>
+    <button mat-icon-button aria-label="Cadstrar Cliente!">
+      <mat-icon>open_in_new</mat-icon>
+    </button>
+  </form>
+
+  <router-outlet></router-outlet>

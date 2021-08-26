@@ -12,7 +12,6 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatTableModule } from '@angular/material/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { InicioComponent, InicialComponent } from './components';
 import { PedidoEdicaoComponent } from './components';
 import { SelecionarPedidoComponent } from './components';
 import { ListaProdutosComponent } from '../pedido/components/pedido-edicao';
@@ -21,8 +20,6 @@ import { ListaProdutosComponent } from '../pedido/components/pedido-edicao';
 
 @NgModule({
   declarations: [
-    InicioComponent,
-    InicialComponent,
     PedidoEdicaoComponent,
     SelecionarPedidoComponent,
     ListaProdutosComponent
@@ -43,4 +40,4 @@ import { ListaProdutosComponent } from '../pedido/components/pedido-edicao';
   ],
   
 })
-export class InicialModule { }
+export class PedidoModule { }

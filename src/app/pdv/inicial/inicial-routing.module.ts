@@ -1,7 +1,9 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
-import { InicialComponent, InicioComponent, PedidoEdicaoComponent, SelecionarPedidoComponent, BuscarProdutoComponent } from ".";
+import { InicialComponent, InicioComponent, PedidoEdicaoComponent, SelecionarPedidoComponent, ListaProdutosComponent } from ".";
+
+
 
 export const InicialRoutes: Routes = [
     {
@@ -24,6 +26,10 @@ export const PedidoEdicaoRoutes: Routes = [
             {
                 path: '',
                 component: PedidoEdicaoComponent
+            },
+            {
+                path: '',
+                component: ListaProdutosComponent
             }
         ]
     }
@@ -42,25 +48,12 @@ export const SelecionarPedidoRoutes: Routes = [
     }
 ];
 
-export const SelecionarProdutoRoutes: Routes = [
-    {
-        path: 'selecionarproduto',
-        component: InicialComponent,
-        children: [
-            {
-                path: '',
-                component: BuscarProdutoComponent
-            }
-        ]
-    }
-];
 
 @NgModule({
     imports: [
         RouterModule.forChild(InicialRoutes),
         RouterModule.forChild(PedidoEdicaoRoutes),
-        RouterModule.forChild(SelecionarPedidoRoutes),
-        RouterModule.forChild(SelecionarProdutoRoutes)
+        RouterModule.forChild(SelecionarPedidoRoutes)
     ],
     exports: [
         RouterModule
