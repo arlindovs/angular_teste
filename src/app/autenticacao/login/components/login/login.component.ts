@@ -16,34 +16,21 @@ export class LoginComponent implements OnInit {
   form!: FormGroup;
 
   constructor(
-    private fb: FormBuilder,
+    private fb: FormBuilder, 
     private snackBar: MatSnackBar,
     private router: Router,
-    private loginService: LoginService
-  ) { }
+    private loginService: LoginService) { }
 
   ngOnInit() {
     this.gerarForm();
   }
 
-  gerarForm(){
+  gerarForm() {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       senha: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
-
-  /*logar(){
-    if (this.form.invalid){
-      this.snackBar.open(
-        "Dados Inválidos","Erro", { duration: 5000 }
-      );
-      return;
-    }
-    const login: Login = this.form.value;
-    alert(JSON.stringify(login));
-  }*/
-
 
   logar() {
     if (this.form.invalid) {
@@ -54,21 +41,16 @@ export class LoginComponent implements OnInit {
     this.loginService.logar(login)
       .subscribe(
         data => {
-          console.log(JSON.stringify(data));
           localStorage['token'] = data['data']['token'];
           const usuarioData = JSON.parse(
             atob(data['data']['token'].split('.')[1]));
-          console.log(JSON.stringify(usuarioData));
           if (usuarioData['role'] == 'ROLE_ADMIN') {
-          	/*alert('Deve redirecionar para a página de admin');*/
-            this.router.navigate(['/inicial']);
+            this.router.navigate(['/admin']);
           } else {
-          	alert('Deve redirecionar para a página de funcionário');
-            //this.router.navigate(['/funcionario']);
+            this.router.navigate(['/funcionario']);
           }
         },
         err => {
-          console.log(JSON.stringify(err));
           let msg: string = "Tente novamente em instantes.";
           if (err['status'] == 401) {
             msg = "Email/senha inválido(s)."
@@ -77,7 +59,11 @@ export class LoginComponent implements OnInit {
         }
       );
   }
-
-
 }
+
+
+
+
+
+
 

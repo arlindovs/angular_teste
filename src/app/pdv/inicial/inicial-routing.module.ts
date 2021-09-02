@@ -25,11 +25,13 @@ export const PedidoEdicaoRoutes: Routes = [
         children: [
             {
                 path: '',
-                component: PedidoEdicaoComponent
-            },
-            {
-                path: '',
-                component: ListaProdutosComponent
+                component: PedidoEdicaoComponent,
+                children: [
+                    {
+                        path: '',
+                        component: ListaProdutosComponent,
+                    }
+                ]
             }
         ]
     }

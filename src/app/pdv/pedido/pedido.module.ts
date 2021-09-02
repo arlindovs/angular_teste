@@ -10,6 +10,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatOptionModule } from '@angular/material/core';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { PedidoEdicaoComponent } from './components';
@@ -35,6 +38,8 @@ import { ListaProdutosComponent } from '../pedido/components/pedido-edicao';
     MatOptionModule,
     MatAutocompleteModule,
     MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
     FormsModule,
     ReactiveFormsModule
   ],

@@ -8,19 +8,18 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
-    ngOnInit(){
-    }
+  ngOnInit() {
+  }
 
-    sair() {
-      delete localStorage['token'];
-      this.router.navigate(['/']);
-    }
+  sair() {
+  	delete localStorage['token'];
+  	this.router.navigate(['/']);
+  }
 
-    autenticado(): boolean {
-      return localStorage['token'];
-    }
-
+  autenticado(): boolean {
+    return localStorage['token'];
+  }
 
 }
